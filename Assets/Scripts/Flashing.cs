@@ -8,15 +8,26 @@ public class Flashing : MonoBehaviour
 
     private Color[] _originalColors;
 
+    private uint _calls;
+
     void Start() {
         _originalColors = new Color[Flashable.Length];
     }
 
     void OnCollisionEnter2D(Collision2D coll) {
-        _originalColors = Flashable.Select(x => x.color).ToArray();
+        Flash();
+    }
+
+    public void Flash() {
+        if (_calls == 0)
+        {
+            _originalColors = Flashable.Select(x => x.color).ToArray();
+        }
+
+        _calls++;
         Invoke("MakeBlack", 0f);
-        Invoke("MakeWhite", .02f);
-        Invoke("TurnColorsBack", .04f);
+        Invoke("MakeWhite", .03f);
+        Invoke("TurnColorsBack", .06f);
     }
 
     private void SetColor(Color color) {
@@ -38,6 +49,8 @@ public class Flashing : MonoBehaviour
     }
 
     private void TurnColorsBack() {
+        _calls--;
+
         for (var i = 0; i < Flashable.Length; i++) {
             Flashable[i].color = _originalColors[i];
         }
