@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 779a7ecdb6dc8e14982b3fbceb2b4d3c
+timeCreated: 1460185113
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: PrototypeBlue04x04
@@ -28,7 +30,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: 2
+    filterMode: 0
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -41,8 +43,8 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 6
-  spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePivot: {x: 0, y: 0}
+  spriteBorder: {x: 128, y: 128, z: 128, w: 128}
   spritePixelsToUnits: 204.8
   alphaIsTransparency: 1
   textureType: 8

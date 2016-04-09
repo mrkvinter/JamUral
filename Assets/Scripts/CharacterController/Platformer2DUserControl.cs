@@ -9,6 +9,8 @@ namespace UnitySampleAssets._2D
         private PlatformerCharacter2D character;
         private bool jump;
 
+        public bool IsDemon;
+
         private void Awake()
         {
             character = GetComponent<PlatformerCharacter2D>();
@@ -27,7 +29,10 @@ namespace UnitySampleAssets._2D
             var h = Input.GetAxis("Horizontal");
             var w = Input.GetAxis("Vertical");
             // Pass all parameters to the character control script.
-            character.Move(new Vector2(h, w), crouch, jump);
+            if (!IsDemon)
+                character.Move(new Vector2(h, w), crouch, jump);
+            else
+                character.Move(Vector2.zero, false, false);
             jump = false;
         }
     }

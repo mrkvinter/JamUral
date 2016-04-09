@@ -41,11 +41,14 @@ namespace UnitySampleAssets._2D
 
         private void FixedUpdate()
         {
-            grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
+            if (!GetComponent<HPPlayer>().IsDead)
+            {
+                grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
 
-            anim.SetBool("Ground", grounded);
+                anim.SetBool("Ground", grounded);
 
-            anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+                anim.SetFloat("vSpeed", GetComponent<Rigidbody2D>().velocity.y);
+            }
         }
 
 
@@ -59,7 +62,7 @@ namespace UnitySampleAssets._2D
 
             anim.SetBool("Crouch", crouch);
 
-            if (grounded || airControl)
+            if ((grounded || airControl) && !GetComponent<HPPlayer>().IsDead)
             {
                 move = (crouch ? move * crouchSpeed : move);
 
@@ -76,7 +79,7 @@ namespace UnitySampleAssets._2D
                     Flip();
             }
 
-            if (grounded && jump && anim.GetBool("Ground"))
+            if (grounded && jump && anim.GetBool("Ground") && !GetComponent<HPPlayer>().IsDead)
             {
                 grounded = false;
                 anim.SetBool("Ground", false);
