@@ -23,12 +23,13 @@ namespace UnitySampleAssets._2D
         private LayerMask whatIsGround; // A mask determining what is ground to the character
 
         private Transform groundCheck; // A position marking where to check if the player is grounded.
-        private float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+        public float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
         private bool grounded = false; // Whether or not the player is grounded.
         private Transform ceilingCheck; // A position marking where to check for ceilings
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator anim; // Reference to the player's animator component.
 
+        private float TimeJump;
 
         private void Awake()
         {
@@ -36,6 +37,7 @@ namespace UnitySampleAssets._2D
             groundCheck = transform.Find("GroundCheck");
             ceilingCheck = transform.Find("CeilingCheck");
             anim = transform.FindChild("Img").GetComponent<Animator>();
+            TimeJump = 0f;
         }
 
 
@@ -44,6 +46,10 @@ namespace UnitySampleAssets._2D
             if (!GetComponent<HPPlayer>().IsDead)
             {
                 grounded = Physics2D.OverlapCircle(groundCheck.position, groundedRadius, whatIsGround);
+
+                var r = Physics2D.Raycast(groundCheck.position,
+                    new Vector2(groundCheck.position.x, groundCheck.position.y - 1f), groundedRadius,
+                    whatIsGround);
 
                 anim.SetBool("Ground", grounded);
 
@@ -54,17 +60,17 @@ namespace UnitySampleAssets._2D
 
         public void Move(Vector2 move, bool crouch, bool jump)
         {
-            if (!crouch && anim.GetBool("Crouch"))
-            {
-                if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
-                    crouch = true;
-            }
+            //if (!crouch && anim.GetBool("Crouch"))
+            //{
+                
+            //    if (Physics2D.OverlapCircle(ceilingCheck.position, ceilingRadius, whatIsGround))
+            //        crouch = true;
+            //}
 
             anim.SetBool("Crouch", crouch);
 
             if ((grounded || airControl) && !GetComponent<HPPlayer>().IsDead)
             {
-                move = (crouch ? move * crouchSpeed : move);
 
                 anim.SetFloat("Speed", Mathf.Abs(move.x));
                 var spedX = move.x * maxSpeed;
@@ -82,6 +88,7 @@ namespace UnitySampleAssets._2D
             if (grounded && jump && anim.GetBool("Ground") && !GetComponent<HPPlayer>().IsDead)
             {
                 grounded = false;
+                
                 anim.SetBool("Ground", false);
                 GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
             }
@@ -92,9 +99,18 @@ namespace UnitySampleAssets._2D
         {
             facingRight = !facingRight;
 
-            Vector3 theScale = transform.localScale;
+            Vector3 theScale = transform.FindChild("Img").localScale;
             theScale.x *= -1;
-            transform.localScale = theScale;
+            //transform.localScale = theScale;
+            transform.FindChild("Img").localScale = theScale;
+        }
+
+        void OnDrawGizmos()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(groundCheck.position,
+                    new Vector2(groundCheck.position.x, groundCheck.position.y - groundedRadius));
+            
         }
     }
 }

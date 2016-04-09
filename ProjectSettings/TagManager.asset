@@ -8,6 +8,8 @@ TagManager:
   - Dangerous
   - Smelly
   - Fire
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX
