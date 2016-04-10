@@ -28,6 +28,7 @@ namespace UnitySampleAssets._2D
             var crouch = Input.GetKey(KeyCode.LeftControl);
             var h = Input.GetAxis("Horizontal");
             var w = Input.GetAxis("Vertical");
+            //jump = Input.GetButtonDown("Jump");
             // Pass all parameters to the character control script.
             if (!IsDemon)
                 character.Move(new Vector2(h, w), crouch, jump);

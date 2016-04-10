@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.ProjectWindowCallback;
 
 
 public class UseControl : MonoBehaviour
@@ -31,7 +30,7 @@ public class UseControl : MonoBehaviour
         /*END DEBUG*/
 
 	    var items = Physics2D.RaycastAll(transform.position,
-	        new Vector2(transform.position.x + DistanceUse * Mathf.Sign(transform.lossyScale.x), transform.position.y), DistanceUse)
+	        new Vector2(transform.position.x + DistanceUse * Mathf.Sign(transform.FindChild("Img").transform.lossyScale.x), transform.position.y), DistanceUse)
             ;
 
 	    if (items.Select(e => e.transform.tag).Count(e => e.Contains("Key")) != 0)
@@ -39,7 +38,7 @@ public class UseControl : MonoBehaviour
 	        var keys = items.Where(e => e.transform.tag.Contains("Key"));
 	        foreach (var key in keys)
 	        {
-	            Item.Add(key.transform.GetComponent<Key>());
+	            Item.Add(key.transform.GetComponentInChildren<Key>());
                 Destroy(key.transform.gameObject);
 	        }
 	    }
@@ -69,7 +68,7 @@ public class UseControl : MonoBehaviour
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawLine(transform.position,
-                new Vector2(transform.position.x + DistanceUse * Mathf.Sign(transform.lossyScale.x), 
+                new Vector2(transform.position.x + DistanceUse * Mathf.Sign(transform.FindChild("Img").transform.lossyScale.x), 
                             transform.position.y));
 
     }

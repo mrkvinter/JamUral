@@ -10,6 +10,7 @@ TagManager:
   - Fire
   - Key
   - Door
+  - Demon
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,12 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1093696345
+    locked: 0
+  - name: Traps
+    uniqueID: 3630010943
+    locked: 0
+  - name: Object
+    uniqueID: 1239427817
     locked: 0
   - name: Foreground
     uniqueID: 1859086223

@@ -5,6 +5,8 @@ public class HPPlayer : MonoBehaviour, IDead
 {
 
     internal bool IsDead;
+
+    public GameObject Menu;
 	// Use this for initialization
 	void Start () {
 	
@@ -28,6 +30,8 @@ public class HPPlayer : MonoBehaviour, IDead
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up, ForceMode2D.Impulse);
                 transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
             }
+
+            Menu.SetActive(true);
         }
     }
 }
