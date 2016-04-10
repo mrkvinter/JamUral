@@ -1,22 +1,38 @@
 fileFormatVersion: 2
-guid: 8b62edff07188ed43aaeb78b5ba1f641
-timeCreated: 1460200186
+guid: e17c29b441d028948ac07c1535f60b7a
+timeCreated: 1460271352
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player_0
-    21300002: Player_1
-    21300004: Player_2
-    21300006: Player_3
-    21300008: Player_4
-    21300010: Player_5
-    21300012: Player_6
-    21300014: Player_7
-    21300016: Player_8
-    21300018: Player_9
-    21300020: Player_10
-    21300022: Player_11
-    21300024: Player_12
+    21300000: sprite_0
+    21300002: sprite_1
+    21300004: sprite_2
+    21300006: sprite_3
+    21300008: sprite_4
+    21300010: sprite_5
+    21300012: sprite_6
+    21300014: sprite_7
+    21300016: sprite_8
+    21300018: sprite_9
+    21300020: sprite_10
+    21300022: sprite_11
+    21300024: sprite_12
+    21300026: sprite_13
+    21300028: sprite_14
+    21300030: sprite_15
+    21300032: sprite_16
+    21300034: sprite_17
+    21300036: sprite_18
+    21300038: sprite_19
+    21300040: sprite_20
+    21300042: sprite_21
+    21300044: sprite_22
+    21300046: sprite_23
+    21300048: sprite_24
+    21300050: sprite_25
+    21300052: sprite_26
+    21300054: sprite_27
+    21300056: sprite_28
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -63,145 +79,321 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Player_0
+    - name: sprite_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 33
+        x: 28
+        y: 164
         width: 21
         height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_1
+    - name: sprite_1
       rect:
         serializedVersion: 2
-        x: 34
-        y: 33
-        width: 21
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: Player_2
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 33
+        x: 55
+        y: 164
         width: 20
         height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_3
+    - name: sprite_2
       rect:
         serializedVersion: 2
-        x: 89
-        y: 33
+        x: 83
+        y: 164
         width: 24
-        height: 23
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_4
+    - name: sprite_3
       rect:
         serializedVersion: 2
-        x: 119
-        y: 33
-        width: 15
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: Player_5
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 34
+        x: 8
+        y: 132
         width: 21
         height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_6
+    - name: sprite_4
       rect:
         serializedVersion: 2
-        x: 9
-        y: 1
+        x: 35
+        y: 132
         width: 21
         height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_7
+    - name: sprite_5
       rect:
         serializedVersion: 2
-        x: 36
-        y: 1
+        x: 63
+        y: 132
         width: 21
         height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_8
+    - name: sprite_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 1
+        x: 90
+        y: 132
         width: 21
         height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_9
+    - name: sprite_7
       rect:
         serializedVersion: 2
-        x: 91
-        y: 1
-        width: 21
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: Player_10
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 0
+        x: 114
+        y: 131
         width: 29
         height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_11
+    - name: sprite_8
       rect:
         serializedVersion: 2
-        x: 151
-        y: 1
+        x: 1
+        y: 93
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 89
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_10
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 90
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_11
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 94
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 93
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_13
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 93
+        width: 29
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_14
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 57
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_15
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 57
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_16
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 57
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_17
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 57
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_18
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 59
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_19
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 59
+        width: 12
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_20
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 59
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_21
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 59
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_22
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 23
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_23
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 23
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_24
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 23
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_25
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 23
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_26
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 164
         width: 21
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: Player_12
+    - name: sprite_27
       rect:
         serializedVersion: 2
-        x: 175
-        y: 1
-        width: 29
-        height: 28
+        x: 133
+        y: 165
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite_28
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 164
+        width: 21
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
