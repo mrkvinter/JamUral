@@ -29,11 +29,10 @@ public class UseControl : MonoBehaviour
 	    textPanel.text = str;
         /*END DEBUG*/
 
-	    var items = Physics2D.RaycastAll(transform.position,
-	        new Vector2(transform.position.x + DistanceUse * Mathf.Sign(transform.FindChild("Img").transform.lossyScale.x), transform.position.y), DistanceUse)
-            ;
-
-	    if (items.Select(e => e.transform.tag).Count(e => e.Contains("Key")) != 0)
+		var turn = new Vector2(Mathf.Sign(transform.FindChild("Img").transform.lossyScale.x), 0);
+		turn.Normalize();
+	    var items = Physics2D.RaycastAll(transform.position, turn, DistanceUse);
+		if (items.Select(e => e.transform.tag).Count(e => e.Contains("Key")) != 0)
 	    {
 	        var keys = items.Where(e => e.transform.tag.Contains("Key"));
 	        foreach (var key in keys)
