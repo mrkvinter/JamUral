@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: 23865f8d3a4f2ba4c84a084ecf44ca98
+timeCreated: 1460838443
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sprite1_0
+    21300002: sprite1_1
+    21300004: sprite1_2
+    21300006: sprite1_3
+    21300008: sprite1_4
+    21300010: sprite1_5
+    21300012: sprite1_43
+    21300014: sprite1_47
+    21300016: sprite1_48
+    21300018: sprite1_49
+    21300020: sprite1_50
+    21300022: sprite1_51
+    21300024: sprite1_52
+    21300026: sprite1_53
+    21300028: sprite1_54
+    21300030: sprite1_6
+    21300032: sprite1_7
+    21300034: sprite1_8
+    21300036: sprite1_9
+    21300038: sprite1_10
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 21
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sprite1_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 282
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 281
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 281
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 282
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_4
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 280
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_5
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 281
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_43
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 73
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_6
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 68
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 68
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_8
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 63
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_9
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 68
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: sprite1_10
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 29
+        width: 57
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,6 +8,7 @@ public class DemonUseControl : MonoBehaviour
     private bool isFirstDown;
 
     private GameObject item;
+    private float oldGravityScale;
 
     private string[] typesForMove;
     //private string nameToMove = "Move";
@@ -16,7 +17,7 @@ public class DemonUseControl : MonoBehaviour
 	void Start ()
 	{
 	    item = null;
-        typesForMove = new string[] { "Key", "Move" };
+        typesForMove = new [] { "Key", "Move" };
 
     }
 	
@@ -31,7 +32,9 @@ public class DemonUseControl : MonoBehaviour
                 foreach (var i in itemK.Where(i => typesForMove.Contains(i.transform.tag)))
                 {
                     item = i.transform.gameObject;
-                    item.GetComponent<BoxCollider2D>().isTrigger = true;
+                    oldGravityScale = item.GetComponent<Rigidbody2D>().gravityScale;
+                    item.GetComponent<Rigidbody2D>().gravityScale = 0;
+                    //item.GetComponent<BoxCollider2D>().isTrigger = true;
                     break;
                 }
                 isFirstDown = true;
@@ -42,15 +45,26 @@ public class DemonUseControl : MonoBehaviour
             }
 	    }
 
-        if (item != null)
-            item.transform.position = transform.position;
-        else
-            isFirstDown = false;
-    }
+	    if (item != null)
+	    {
+	        var direct = (transform.position - item.transform.position);
+
+            if (direct.magnitude > 0.6f)
+	        {
+	            var direction = direct.normalized*500*Time.deltaTime;
+	            if (direct.magnitude < 1) direction = direct*100*Time.deltaTime;
+	            //item.transform.position += direction;
+	            //item.transform.position = Vector2.MoveTowards(item.transform.position, transform.position, 0.1f);
+	            item.GetComponent<Rigidbody2D>().velocity = direction;
+	        }
+	    }
+	    else
+	        isFirstDown = false;
+	}
 
     public void DropItem()
     {
-        item.GetComponent<BoxCollider2D>().isTrigger = false;
+        item.GetComponent<Rigidbody2D>().gravityScale = oldGravityScale;
         item = null;
         isFirstDown = false;
     }
