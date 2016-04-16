@@ -33,6 +33,7 @@ public class SwitchMonster : MonoBehaviour
             Player.GetComponent<Platformer2DUserControl>().IsDemon = false;
 	        follow.target = Player.transform;
             Monster.SetActive(false);
+            Monster.GetComponent<DemonUseControl>().DropItem();
         }
 	}
 }

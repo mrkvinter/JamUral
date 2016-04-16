@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Assets.Scripts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 
-public class StakesMove : MonoBehaviour
+public class StakesMove : MonoBehaviour, ITriggerable
 {
     public float speed = 0.1f;
     private float reloadTimer = 0f;

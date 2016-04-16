@@ -18,7 +18,8 @@ namespace UnitySampleAssets._2D
 
         private void Update()
         {
-            jump = Input.GetButtonDown("Jump");
+            if (!jump)
+                jump = Input.GetButtonDown("Jump");
         }
 
         private void FixedUpdate()

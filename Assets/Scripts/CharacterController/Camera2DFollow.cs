@@ -12,10 +12,10 @@ namespace UnitySampleAssets._2D
         public float lookAheadReturnSpeed = 0.5f;
         public float lookAheadMoveThreshold = 0.1f;
 
-        private float offsetZ;
-        private Vector3 lastTargetPosition;
-        private Vector3 currentVelocity;
-        private Vector3 lookAheadPos;
+        public float offsetZ;
+        public Vector3 lastTargetPosition;
+        public Vector3 currentVelocity;
+        public Vector3 lookAheadPos;
 
         // Use this for initialization
         private void Start()

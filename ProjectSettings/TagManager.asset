@@ -11,6 +11,7 @@ TagManager:
   - Key
   - Door
   - Demon
+  - Move
   layers:
   - Default
   - TransparentFX
@@ -47,6 +48,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: MaxBackground
+    uniqueID: 3124878181
     locked: 0
   - name: Background
     uniqueID: 1093696345

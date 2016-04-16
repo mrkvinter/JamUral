@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Assets.Scripts;
 using System.Collections;
 
 public class TrigButton : MonoBehaviour {
@@ -15,15 +16,15 @@ public class TrigButton : MonoBehaviour {
 	    
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (target != null)
-            target.GetComponent<StakesMove>().OnTriggerEnter();
+        if (target != null && other.gameObject.tag == "Player")
+            target.GetComponent<ITriggerable>().OnTriggerEnter();
     }
     //---------------------------------------------------------------------------
-    void OnCollisionExit2D(Collision2D other)
+    void OnTriggerExit2D(Collider2D other)
     { 
-        if (target != null)
-            target.GetComponent<StakesMove>().OnTriggerExit();
+        if (target != null && other.gameObject.tag == "Player")
+            target.GetComponent<ITriggerable>().OnTriggerExit();
     }
 }

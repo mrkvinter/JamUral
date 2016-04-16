@@ -8,7 +8,7 @@ namespace Assets.Scripts
 {
     public interface ITriggerable
     {
-        void OnTrigEnter(Collision2D other);
-        void OnTrigrExit(Collision2D other);
+        void OnTriggerEnter();
+        void OnTriggerExit();
     }
 }

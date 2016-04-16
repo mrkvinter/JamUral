@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColorDoor: 0
+  IsOpen: 0
 --- !u!212 &21257962
 SpriteRenderer:
   m_ObjectHideFlags: 1
