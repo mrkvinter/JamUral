@@ -27,6 +27,9 @@ public class DemonUseControl : MonoBehaviour
 	    {
             if (!isFirstDown)
             {
+                var audio = GetComponent<AudioSource>();
+                if (audio != null)
+                    audio.Play();
                 var itemK = Physics2D.OverlapCircleAll(transform.position, RadiusGrap).ToArray();
 
                 foreach (var i in itemK.Where(i => typesForMove.Contains(i.transform.tag)))

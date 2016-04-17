@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Linq;
 
@@ -9,6 +10,8 @@ public class Shut : MonoBehaviour
     public Collider2D Area;
     public GameObject Fire;
 
+    public AudioSource ShutSound;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -18,15 +21,20 @@ public class Shut : MonoBehaviour
 	void Update () {
         Fire.GetComponent<Animator>().SetBool("Shut", false);
         var allGO = Physics2D.OverlapCircleAll(transform.position, 10f).Select(e => e.gameObject).ToArray();
+       
 	    foreach (var target in Targets)
 	    {
-	        if (allGO.Contains(target))
+	        if (allGO.Contains(target) && 
+                Math.Abs(Mathf.Sign((target.transform.position - transform.position).x) - Mathf.Sign(transform.FindChild("Img").transform.lossyScale.x)) < 0.001)
 	            Shute(target);
 	    }
 	}
 
     void Shute(GameObject t)
     {
+        if (!ShutSound.isPlaying)
+            ShutSound.Play();
+
         Fire.GetComponent<Animator>().SetBool("Shut", true);
         var allT = Physics2D.RaycastAll(transform.position,
             Vector2.right*transform.FindChild("Img").transform.lossyScale.x,
@@ -38,6 +46,7 @@ public class Shut : MonoBehaviour
                 c.Dead("Shut");
         }
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (Targets.Contains(other.gameObject))

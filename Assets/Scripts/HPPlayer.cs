@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class HPPlayer : MonoBehaviour, IDead
 {
     Animator anim;
 
-    internal bool IsDead;
+    public bool IsDead;
 
     public GameObject Menu;
 
@@ -15,6 +16,8 @@ public class HPPlayer : MonoBehaviour, IDead
 
     public float timDead = 0;
 
+    public bool isResurrected;
+    public AudioClip ArghDead;
     // Use this for initialization
     void Start () {
 
@@ -25,7 +28,7 @@ public class HPPlayer : MonoBehaviour, IDead
 	void Update () {
 
 
-	    if (IsDead)
+	    if (IsDead && isResurrected)
 	    {
 	        timDead += Time.deltaTime;
 	        if (timDead > 1.5)
@@ -46,6 +49,8 @@ public class HPPlayer : MonoBehaviour, IDead
         if (!IsDead)
         {
             IsDead = true;
+            var audio = GetComponent<AudioSource>();
+            
             if (message == "Saw")
             {
                 var otherTransform = (Transform)parametrs[0];
@@ -57,6 +62,7 @@ public class HPPlayer : MonoBehaviour, IDead
 
             if (message == "Demon")
             {
+                audio.Play();
                 transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
                 //transform.FindChild("Img").FindChild("Shut").gameObject.SetActive(false);
                 GetComponent<Shut>().enabled = false;
