@@ -9,6 +9,7 @@ public class Shut : MonoBehaviour
     public GameObject[] Targets;
     public Collider2D Area;
     public GameObject Fire;
+    public float Radius = 7f;
 
     public AudioSource ShutSound;
 
@@ -20,7 +21,7 @@ public class Shut : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         Fire.GetComponent<Animator>().SetBool("Shut", false);
-        var allGO = Physics2D.OverlapCircleAll(transform.position, 10f).Select(e => e.gameObject).ToArray();
+        var allGO = Physics2D.OverlapCircleAll(transform.position, Radius).Select(e => e.gameObject).ToArray();
        
 	    foreach (var target in Targets)
 	    {
@@ -37,19 +38,22 @@ public class Shut : MonoBehaviour
 
         Fire.GetComponent<Animator>().SetBool("Shut", true);
         var allT = Physics2D.RaycastAll(transform.position,
-            Vector2.right*transform.FindChild("Img").transform.lossyScale.x,
-            10f);
+            Vector2.right * transform.FindChild("Img").transform.lossyScale.x,
+            Radius);
         foreach (var a in allT)
         {
             var c = a.transform.GetComponent<HPPlayer>();
             if (c != null)
+            {
                 c.Dead("Shut");
+                Fire.GetComponent<Animator>().SetBool("Shut", false);
+            }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (Targets.Contains(other.gameObject))
+        if (other.gameObject.tag == "Player" && Targets.Contains(other.gameObject))
             Shute(other.gameObject);
         
     }
