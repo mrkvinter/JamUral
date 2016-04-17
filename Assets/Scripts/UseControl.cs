@@ -14,6 +14,7 @@ public class UseControl : MonoBehaviour
 
     public GameObject HelpPanel;
 
+    //public Text textPanel;
 	// Use this for initialization
 	void Start () {
 	
@@ -21,30 +22,22 @@ public class UseControl : MonoBehaviour
 
 	void Update ()
 	{
-        /*DEBUG*/
-	    var textPanel = GameObject.Find("TextHelp").GetComponent<Text>();
-	    var str = "Item:\n";
-	    foreach (var i in Item)
-	        str += i + "\n";
-	    textPanel.text = str;
-        /*END DEBUG*/
 
 		var turn = new Vector2(Mathf.Sign(transform.FindChild("Img").transform.lossyScale.x), 0);
 		turn.Normalize();
 	    var items = Physics2D.RaycastAll(transform.position, turn, DistanceUse);
-		if (items.Select(e => e.transform.tag).Count(e => e.Contains("Key")) != 0)
-	    {
-	        var keys = items.Where(e => e.transform.tag.Contains("Key"));
+	    var keys = Physics2D.OverlapCircleAll(transform.position, 1f).Where(e => e.tag == "Key");
+
 	        foreach (var key in keys)
 	        {
 	            Item.Add(key.transform.GetComponentInChildren<Key>());
                 Destroy(key.transform.gameObject);
 	        }
-	    }
+
 	    if (items.Select(e => e.transform.tag).Contains("Door"))
 	    {
 	        var door = items.First(e => e.transform.tag.Contains("Door")).transform.GetComponent<DoorControl>();
-            HelpPanel.SetActive(true);
+	        HelpPanel.SetActive(true);
 	        if (Input.GetKeyDown(KeyCode.E))
 	        {
 	            for (var i = 0; i < Item.Count; i++)
@@ -57,10 +50,10 @@ public class UseControl : MonoBehaviour
 	            }
 	        }
 	    }
-        else
-        {
-            HelpPanel.SetActive(false);
-        }
+	    else
+	    {
+	        HelpPanel.SetActive(false);
+	    }
 	}
 
     void OnDrawGizmos()

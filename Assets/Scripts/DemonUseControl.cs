@@ -55,7 +55,9 @@ public class DemonUseControl : MonoBehaviour
 	            if (direct.magnitude < 1) direction = direct*100*Time.deltaTime;
 	            //item.transform.position += direction;
 	            //item.transform.position = Vector2.MoveTowards(item.transform.position, transform.position, 0.1f);
+	            
 	            item.GetComponent<Rigidbody2D>().velocity = direction;
+                //item.GetComponent<Rigidbody2D>().AddForce(direction/100);
 	        }
 	    }
 	    else

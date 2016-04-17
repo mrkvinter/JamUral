@@ -24,6 +24,7 @@ public class SwitchMonster : MonoBehaviour
 	        IsMonster = true;
             Monster.GetComponent<Transform>().position = Player.GetComponent<Transform>().position;
             Player.GetComponent<Platformer2DUserControl>().IsDemon = true;
+            Player.GetComponentInChildren<Animator>().SetBool("Demon", true);
 	        follow.target = Monster.transform;
 	        Monster.SetActive(true);
 	    }
@@ -31,7 +32,8 @@ public class SwitchMonster : MonoBehaviour
 	    {
 	        IsMonster = false;
             Player.GetComponent<Platformer2DUserControl>().IsDemon = false;
-	        follow.target = Player.transform;
+            Player.GetComponentInChildren<Animator>().SetBool("Demon", false);
+            follow.target = Player.transform;
             Monster.SetActive(false);
             Monster.GetComponent<DemonUseControl>().DropItem();
         }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace UnitySampleAssets._2D
 {
@@ -9,6 +10,8 @@ namespace UnitySampleAssets._2D
         private PlayerMonsterMove2D character;
         private bool jump;
 
+        public float RadiusAttack;
+
         private void Awake()
         {
             character = GetComponent<PlayerMonsterMove2D>();
@@ -16,6 +19,14 @@ namespace UnitySampleAssets._2D
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                var ememy = Physics2D.OverlapCircleAll(transform.position, RadiusAttack);
+                foreach (var e in ememy.Where(e => e.tag == "Enemy"))
+                {
+                    e.GetComponent<HPPlayer>().Dead("Demon");
+                }
+            }
         }
 
         private void FixedUpdate()

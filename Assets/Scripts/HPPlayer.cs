@@ -11,6 +11,10 @@ public class HPPlayer : MonoBehaviour, IDead
 
     public Transform CheckPoint;
 
+    public GameObject[] OffWhenDead;
+
+    public float timDead = 0;
+
     // Use this for initialization
     void Start () {
 
@@ -21,15 +25,17 @@ public class HPPlayer : MonoBehaviour, IDead
 	void Update () {
 
 
-        //if (IsDead && anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        //{
-        //    if (CheckPoint != null)
-        //    {
-        //        IsDead = false;
-        //        //transform.FindChild("Img").GetComponent<Animator>().SetBool("Idle", true);
-        //        transform.position = CheckPoint.position;
-        //    }
-        //}
+	    if (IsDead)
+	    {
+	        timDead += Time.deltaTime;
+	        if (timDead > 1.5)
+	        {
+                IsDead = false;
+                transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", false);
+                transform.position = CheckPoint.position;
+	            timDead = 0;
+	        }
+	    }
 
 
 
@@ -49,13 +55,26 @@ public class HPPlayer : MonoBehaviour, IDead
                 transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
             }
 
+            if (message == "Demon")
+            {
+                transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
+                //transform.FindChild("Img").FindChild("Shut").gameObject.SetActive(false);
+                GetComponent<Shut>().enabled = false;
+                foreach (var o in OffWhenDead)
+                    o.SetActive(false);
+
+            }
+            if (message == "Shut")
+            {
+                transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
+            }
             //  Menu.SetActive(true);
 
             if (CheckPoint != null)
             {
-                IsDead = false;
-                transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", false);
-                transform.position = CheckPoint.position;
+                //IsDead = false;
+                //transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", false);
+                //transform.position = CheckPoint.position;
             }
         }
     }

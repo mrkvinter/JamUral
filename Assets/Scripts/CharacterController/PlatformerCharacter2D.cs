@@ -31,6 +31,7 @@ namespace UnitySampleAssets._2D
 
         private float TimeJump;
 
+        
         private void Awake()
         {
             // Setting up references.
@@ -103,6 +104,9 @@ namespace UnitySampleAssets._2D
             theScale.x *= -1;
             //transform.localScale = theScale;
             transform.FindChild("Img").localScale = theScale;
+            GetComponentInChildren<Light>().transform.Rotate(Vector3.right, 180);
+            //Quaternion.
+            //GetComponentInChildren<Light>().transform.rotation = new Quaternion(0f, oldR .y + 180f, 0, 1);
         }
 
         void OnDrawGizmos()
