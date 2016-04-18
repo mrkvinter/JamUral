@@ -25,9 +25,10 @@ public class HPPlayer : MonoBehaviour, IDead
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 
-
+	    
 	    if (IsDead && isResurrected)
 	    {
 	        timDead += Time.deltaTime;
@@ -40,6 +41,9 @@ public class HPPlayer : MonoBehaviour, IDead
 	        }
 	    }
 
+        if (timDead > 2f)
+            timDead = 0;
+
 
 
     }
@@ -50,7 +54,32 @@ public class HPPlayer : MonoBehaviour, IDead
         {
             IsDead = true;
             var audio = GetComponent<AudioSource>();
+            if (transform.tag == "Enemy")
+            {
+                audio.Play();
+                transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
+                //transform.FindChild("Img").FindChild("Shut").gameObject.SetActive(false);
+                GetComponent<Shut>().enabled = false;
+
+                foreach (var component in GetComponents<Collider2D>())
+                    component.enabled = false;
+
+                foreach (var o in OffWhenDead)
+                    o.SetActive(false);
+                Destroy(this);
+            }
             
+            if (message == "Fire")
+            {
+                if (transform.tag == "Player")
+                {
+
+                }
+                else
+                {
+                    
+                }
+            }
             if (message == "Saw")
             {
                 var otherTransform = (Transform)parametrs[0];
@@ -64,10 +93,15 @@ public class HPPlayer : MonoBehaviour, IDead
             {
                 audio.Play();
                 transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
-                //transform.FindChild("Img").FindChild("Shut").gameObject.SetActive(false);
+                transform.FindChild("Img").FindChild("Shut").gameObject.SetActive(false);
                 GetComponent<Shut>().enabled = false;
+
+                foreach (var component in GetComponents<Collider2D>())
+                    component.enabled = false;
+
                 foreach (var o in OffWhenDead)
                     o.SetActive(false);
+                Destroy(this);
 
             }
             if (message == "Shut")

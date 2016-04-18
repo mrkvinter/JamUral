@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.2, y: 14.03, z: 0}
+  m_LocalPosition: {x: -20.17, y: 14.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 492574}
@@ -247,7 +247,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136264}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3.2
@@ -617,7 +617,8 @@ MonoBehaviour:
   - {fileID: 0}
   Area: {fileID: 0}
   Fire: {fileID: 132232}
-  ShutSound: {fileID: 0}
+  Radius: 7
+  ShutSound: {fileID: 8241728}
 --- !u!212 &21275262
 SpriteRenderer:
   m_ObjectHideFlags: 1

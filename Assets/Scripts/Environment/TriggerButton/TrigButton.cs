@@ -7,7 +7,7 @@ public class TrigButton : MonoBehaviour {
 	public GameObject target;
 
 	void OnTriggerExit2D(Collider2D other)
-    { 
+	{
 		if (target != null && other.gameObject.tag == "Player")
 			foreach (var _ in Fall ()) { }
     }

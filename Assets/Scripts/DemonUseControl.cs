@@ -31,9 +31,15 @@ public class DemonUseControl : MonoBehaviour
                 if (audio != null)
                     audio.Play();
                 var itemK = Physics2D.OverlapCircleAll(transform.position, RadiusGrap).ToArray();
-
+                Debug.Log("Count: " + itemK.Length);
+                foreach (var d in itemK.Where(e => e.transform.tag == "Boom"))
+                {
+                    var boom = d.GetComponent<BOOM>();
+                    if (boom != null) boom.Boom();
+                }
                 foreach (var i in itemK.Where(i => typesForMove.Contains(i.transform.tag)))
                 {
+                    
                     item = i.transform.gameObject;
                     oldGravityScale = item.GetComponent<Rigidbody2D>().gravityScale;
                     item.GetComponent<Rigidbody2D>().gravityScale = 0;

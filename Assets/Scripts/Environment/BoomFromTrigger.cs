@@ -19,6 +19,7 @@ public class BoomFromTrigger : MonoBehaviour, ITriggerable
 	    if (isTriggered)
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 0 , 0);
+            GetComponent<BOOM>().Boom();
         }
 	}
 
@@ -26,6 +27,8 @@ public class BoomFromTrigger : MonoBehaviour, ITriggerable
     {
         isTriggered = true;
     }
+
+    
 
     public void OnTriggerExit()
     {

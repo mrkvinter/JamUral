@@ -12,6 +12,8 @@ TagManager:
   - Door
   - Demon
   - Move
+  - Enemy
+  - Boom
   layers:
   - Default
   - TransparentFX
