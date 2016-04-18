@@ -108,6 +108,10 @@ public class HPPlayer : MonoBehaviour, IDead
             {
                 transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
             }
+            if (message == "Boom")
+            {
+                transform.FindChild("Img").GetComponent<Animator>().SetBool("Dead", true);
+            }
             //  Menu.SetActive(true);
 
             if (CheckPoint != null)
