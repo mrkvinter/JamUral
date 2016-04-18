@@ -14,4 +14,8 @@ public class MovePlatforms : MonoBehaviour {
 			target.GetComponent<MoveableObject> ().Speed = 2.5f;
 		}
 	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		Destroy (target.GetComponent<MoveableObject>());
+	}
 }
