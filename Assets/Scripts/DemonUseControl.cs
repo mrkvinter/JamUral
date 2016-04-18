@@ -69,8 +69,11 @@ public class DemonUseControl : MonoBehaviour
 
     public void DropItem()
     {
-        item.GetComponent<Rigidbody2D>().gravityScale = oldGravityScale;
-        item = null;
-        isFirstDown = false;
+		var component = item.GetComponent<Rigidbody2D> ();
+		if (component != null) {
+			component.gravityScale = oldGravityScale;
+			item = null;
+			isFirstDown = false;
+		}
     }
 }

@@ -29,7 +29,7 @@ namespace UnitySampleAssets._2D
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator anim; // Reference to the player's animator component.
 
-        private float TimeJump;
+		private float TimeJump;
 
         
         private void Awake()
@@ -38,7 +38,7 @@ namespace UnitySampleAssets._2D
             groundCheck = transform.Find("GroundCheck");
             ceilingCheck = transform.Find("CeilingCheck");
             anim = transform.FindChild("Img").GetComponent<Animator>();
-            TimeJump = 0f;
+			TimeJump = 0f;
         }
 
 
@@ -78,7 +78,7 @@ namespace UnitySampleAssets._2D
 
                 if (!grounded && airControl) spedX /= 1.5f;
 
-                GetComponent<Rigidbody2D>().velocity = new Vector2(spedX, GetComponent<Rigidbody2D>().velocity.y);
+				GetComponent<Rigidbody2D>().velocity = new Vector2 (spedX, GetComponent<Rigidbody2D>().velocity.y);
 
                 if (move.x > 0 && !facingRight)
                     Flip();
@@ -104,17 +104,21 @@ namespace UnitySampleAssets._2D
             theScale.x *= -1;
             //transform.localScale = theScale;
             transform.FindChild("Img").localScale = theScale;
-            GetComponentInChildren<Light>().transform.Rotate(Vector3.right, 180);
+			var light = GetComponentInChildren<Light> ();
+			if (light != null) {
+				light.transform.Rotate (Vector3.right, 180);
+			}
             //Quaternion.
             //GetComponentInChildren<Light>().transform.rotation = new Quaternion(0f, oldR .y + 180f, 0, 1);
         }
 
         void OnDrawGizmos()
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(groundCheck.position,
-                    new Vector2(groundCheck.position.x, groundCheck.position.y - groundedRadius));
-            
+		{
+			if (groundCheck != null) {
+				Gizmos.color = Color.yellow;
+				Gizmos.DrawLine (groundCheck.position,
+					new Vector2 (groundCheck.position.x, groundCheck.position.y - groundedRadius));
+			}
         }
     }
 }

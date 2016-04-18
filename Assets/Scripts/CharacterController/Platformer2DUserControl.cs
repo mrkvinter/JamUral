@@ -9,11 +9,11 @@ namespace UnitySampleAssets._2D
         private PlatformerCharacter2D character;
         private bool jump;
 
-        public bool IsDemon;
+		public bool IsDemon;
 
         private void Awake()
         {
-            character = GetComponent<PlatformerCharacter2D>();
+			character = GetComponent<PlatformerCharacter2D>();
         }
 
         private void Update()
@@ -24,7 +24,6 @@ namespace UnitySampleAssets._2D
 
         private void FixedUpdate()
         {
-
             // Read the inputs.
             var crouch = Input.GetKey(KeyCode.LeftControl);
             var h = Input.GetAxis("Horizontal");
@@ -36,6 +35,7 @@ namespace UnitySampleAssets._2D
             else
                 character.Move(Vector2.zero, false, false);
             jump = false;
+
         }
     }
 }
